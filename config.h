@@ -66,6 +66,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show", "run", "-font", "PragmataPro Liga 13", "--dpi", "120", "-lines", "12", "-padding", "18", "-width", "60", "-location", "0", "-columns", "3", "-sidebar-mode" };
 static const char *termcmd[]  = { "kitty", NULL };
 
+#include "shiftview.c"
 #include "focusmaster.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,6 +96,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_bracketright, shiftview, {.i = +1 } },
+	{ MODKEY,                       XK_bracketleft, shiftview, {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_bracketright, shifttag, {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_bracketleft, shifttag,  {.i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
