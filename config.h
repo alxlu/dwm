@@ -50,15 +50,14 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-        { "(@)",      spiral },    /* first entry is default */
-        { "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[]=",      tile },
-	{ "[M]",      monocle },
-        { "(@)",      spiral },
-        { "[\\]",     dwindle },
-        { "|M|",      centeredmaster },
-        { "H[]",      deck },
-        { "TTT",      bstack },
+	{ "(@)",      spiral },		/* 0. first entry is default */
+	{ "><>",      NULL },		/* 1. no layout function means floating behavior */
+	{ "[]=",      tile },		/* 2. */
+	{ "[M]",      monocle },	/* 3. */
+	{ "[\\]",     dwindle },	/* 4. */
+	{ "|M|",      centeredmaster },	/* 5. */
+	{ "H[]",      deck },		/* 6. */
+	{ "TTT",      bstack },		/* 7. */
 };
 
 /* key definitions */
@@ -96,14 +95,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[7]} },
-	{ MODKEY|ShiftMask,             XK_y,      setlayout,      {.v = &layouts[8]} },
 	{ MODKEY,                       XK_a,      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_a,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_z,      incrgaps,       {.i = +3 } },
