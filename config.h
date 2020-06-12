@@ -50,8 +50,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+        { "(@)",      spiral },    /* first entry is default */
+        { "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[]=",      tile },
 	{ "[M]",      monocle },
         { "(@)",      spiral },
         { "[\\]",     dwindle },
