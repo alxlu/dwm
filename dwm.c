@@ -2280,7 +2280,7 @@ warp(const Client *c)
 	int x, y;
 
 	if (!c) {
-		XWarpPointer(dpy, None, root, 0, 0, 0, 0, selmon->wx + selmon->ww/2, selmon->wy + selmon->wh/2);
+		XWarpPointer(dpy, None, root, 0, 0, 0, 0, selmon->wx, selmon->wy);
 		return;
 	}
 
