@@ -531,6 +531,7 @@ spiral(Monitor *m)
  * Default tile layout + gaps
  */
 
+/*
 static void
 tile(Monitor *m)
 {
@@ -571,3 +572,4 @@ tile(Monitor *m)
 			sy += HEIGHT(c) + ih;
 		}
 }
+*/
